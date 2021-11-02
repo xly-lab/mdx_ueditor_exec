@@ -1,12 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import App from "./App";
+import "./index.css";
+import "braft-editor/dist/index.css";
+import "braft-extensions/dist/table.css";
+import BraftEditorT from "./pages/braftEditor";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route exact path="/braftEditorT" component={BraftEditorT} />
+      </Switch>
+    </Router>
+    {/* <App /> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,6 +1,7 @@
 /* eslint-disable no-dupe-keys */
 import MDX from "@mdx-js/runtime";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { tw } from "twind";
 import "./App.css";
 import OwnerEditor from "./components/OwnerEditor";
@@ -95,6 +96,7 @@ function App() {
 
   return (
     <div className={tw`flex justify-evenly`}>
+      <Link to="braftEditorT"> 去看braftEditor</Link>
       <UEditor
         id="text"
         value={content}
