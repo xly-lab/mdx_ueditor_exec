@@ -4,9 +4,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { tw } from "twind";
 import "./App.css";
+import appStyle from "./App.module.scss";
 import OwnerEditor from "./components/OwnerEditor";
 import UEditor from "./components/UEditor";
-import appStyle from "./App.module.scss";
 function App() {
   const ownerEditorRef = useRef(null);
   const [content, setContent] = useState(null);
@@ -105,11 +105,14 @@ function App() {
         height={500}
       />
       <OwnerEditor ref={ownerEditorRef} changeCtx={changeCtx} />
-      <div className={tw`w-1/4 border  overflow-auto`} style={{ height: 559 }}>
+      <div
+        className={tw`w-1/4 border  overflow-auto bf-editor-body `}
+        style={{ height: 559 }}
+      >
         <MDX
-          components={{
-            ...defaultStyle,
-          }}
+        // components={{
+        //   ...defaultStyle,
+        // }}
         >
           {contentJsx}
         </MDX>

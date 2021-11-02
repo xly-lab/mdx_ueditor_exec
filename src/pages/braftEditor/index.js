@@ -1,29 +1,25 @@
 import BraftEditor from "braft-editor";
-
 import Table from "braft-extensions/dist/table";
-import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useKeyPress } from "react-use";
 import { tw } from "twind";
 
+const options = {
+  defaultColumns: 3, // 默认列数
+  defaultRows: 3, // 默认行数
+  withDropdown: false, // 插入表格前是否弹出下拉菜单
+  columnResizable: true, // 是否允许拖动调整列宽，默认false
+  exportAttrString: 'style="border-collapse: collapse;border:1px"', // 指定输出HTML时附加到table标签上的属性字符串
+  includeEditors: ["editor-1"], // 指定该模块对哪些BraftEditor生效，不传此属性则对所有BraftEditor有效
+  excludeEditors: [], // 指定该模块对哪些BraftEditor无效
+};
+
+BraftEditor.use(Table(options));
+
 const BraftEditorT = () => {
-  const options = useMemo(
-    () => ({
-      defaultColumns: 3, // 默认列数
-      defaultRows: 3, // 默认行数
-      withDropdown: false, // 插入表格前是否弹出下拉菜单
-      columnResizable: true, // 是否允许拖动调整列宽，默认false
-      exportAttrString: 'style="border-collapse: collapse;border:1px"', // 指定输出HTML时附加到table标签上的属性字符串
-      includeEditors: ["editor-1"], // 指定该模块对哪些BraftEditor生效，不传此属性则对所有BraftEditor有效
-      excludeEditors: [], // 指定该模块对哪些BraftEditor无效
-    }),
-    []
-  );
   useKeyPress(async (key) => {
     await setKey(key);
   });
-
-  BraftEditor.use(Table(options));
 
   // 使用BraftEditor.createEditorState创建编辑器数据
   const [editorValue, setEditorValue] = useState(
@@ -108,8 +104,8 @@ const BraftEditorT = () => {
   return (
     <>
       {/* <Link to="/">去看uEditor</Link> */}
-      <div className={tw`flex`}>
-        <div className={tw`w-1/2 h-screen`}>
+      <div className={tw`grid grid-cols-2`}>
+        <div className={tw``}>
           <BraftEditor
             onChange={(editorValue) => {
               if (key?.code === "Delete") return;
@@ -130,9 +126,11 @@ const BraftEditorT = () => {
             // }}
             id="editor-1"
           />
+          <button>one</button>
+          <button>two</button>
         </div>
         <div
-          className={tw`w-1/2 bg-blue-100`}
+          className={tw`py-4 mx-auto h-screen w-1/2 p-2 rounded overflow-auto  bg-gray-100 bf-editor-body text-center`}
           dangerouslySetInnerHTML={{ __html: editorValue.toHTML() }}
         ></div>
       </div>
