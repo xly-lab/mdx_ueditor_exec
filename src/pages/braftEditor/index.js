@@ -105,7 +105,7 @@ const BraftEditorT = () => {
     <>
       {/* <Link to="/">去看uEditor</Link> */}
       <div className={tw`grid grid-cols-2`}>
-        <div className={tw``}>
+        <div className={tw`w-1/2`}>
           <BraftEditor
             onChange={(editorValue) => {
               if (key?.code === "Delete") return;

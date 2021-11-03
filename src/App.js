@@ -1,6 +1,7 @@
 /* eslint-disable no-dupe-keys */
 import MDX from "@mdx-js/runtime";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { Link } from "react-router-dom";
 import { tw } from "twind";
 import "./App.css";
@@ -91,6 +92,7 @@ function App() {
   }, [content, ownerEditorRef]);
 
   const changeCtx = useCallback(async () => {
+    console.log(ownerEditorRef.current.content);
     setContentJsx(ownerEditorRef.current.content);
   }, []);
 
@@ -106,17 +108,31 @@ function App() {
       />
       <OwnerEditor ref={ownerEditorRef} changeCtx={changeCtx} />
       <div
-        className={tw`w-1/4 border  overflow-auto bf-editor-body `}
+        className={tw`w-1/4 border  overflow-auto ${appStyle.upload} `}
         style={{ height: 559 }}
       >
-        <MDX
-        // components={{
-        //   ...defaultStyle,
-        // }}
-        >
-          {contentJsx}
-        </MDX>
+        <div className="markdown-editor-body">
+          <ErrorBoundary FallbackComponent={ErrorFallback} key={contentJsx}>
+            <MDX
+            // components={{
+            //   ...defaultStyle,
+            // }}
+            >
+              {contentJsx}
+            </MDX>
+          </ErrorBoundary>
+        </div>
       </div>
+    </div>
+  );
+}
+
+function ErrorFallback({ error, resetErrorBoundary }) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
     </div>
   );
 }

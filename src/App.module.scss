@@ -1,1 +1,911 @@
 .trClass:nth-child(even) {background-color: #f2f2f2 !important;}
+.upload{
+  :global{
+    .ant-upload-list{
+      display: none;
+    }
+    .markdown-editor-body {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      margin: 0;
+      padding: 4px;
+      color: #24292f;
+      background-color: #ffffff;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+      font-size: 16px;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+    
+    .markdown-editor-body .octicon {
+      display: inline-block;
+      fill: currentColor;
+      vertical-align: text-bottom;
+    }
+    
+    .markdown-editor-body h1:hover .anchor .octicon-link:before,
+    .markdown-editor-body h2:hover .anchor .octicon-link:before,
+    .markdown-editor-body h3:hover .anchor .octicon-link:before,
+    .markdown-editor-body h4:hover .anchor .octicon-link:before,
+    .markdown-editor-body h5:hover .anchor .octicon-link:before,
+    .markdown-editor-body h6:hover .anchor .octicon-link:before {
+      width: 16px;
+      height: 16px;
+      content: ' ';
+      display: inline-block;
+      background-color: currentColor;
+      -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+      mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+    }
+    
+    .markdown-editor-body details,
+    .markdown-editor-body figcaption,
+    .markdown-editor-body figure {
+      display: block;
+    }
+    
+    .markdown-editor-body summary {
+      display: list-item;
+    }
+    
+    .markdown-editor-body a {
+      background-color: transparent;
+      color: #0969da;
+      text-decoration: none;
+    }
+    
+    .markdown-editor-body a:active,
+    .markdown-editor-body a:hover {
+      outline-width: 0;
+    }
+    
+    .markdown-editor-body abbr[title] {
+      border-bottom: none;
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted;
+    }
+    
+    .markdown-editor-body b,
+    .markdown-editor-body strong {
+      font-weight: 600;
+    }
+    
+    .markdown-editor-body dfn {
+      font-style: italic;
+    }
+    
+    .markdown-editor-body h1 {
+      margin: .67em 0;
+      font-weight: 600;
+      padding-bottom: .3em;
+      font-size: 2em;
+      border-bottom: 1px solid hsla(210,18%,87%,1);
+    }
+    
+    .markdown-editor-body mark {
+      background-color: #ff0;
+      color: #24292f;
+    }
+    
+    .markdown-editor-body small {
+      font-size: 90%;
+    }
+    
+    .markdown-editor-body sub,
+    .markdown-editor-body sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    .markdown-editor-body sub {
+      bottom: -0.25em;
+    }
+    
+    .markdown-editor-body sup {
+      top: -0.5em;
+    }
+    
+    .markdown-editor-body img {
+      border-style: none;
+      max-width: 100%;
+      box-sizing: content-box;
+      background-color: #ffffff;
+      margin: auto;
+    }
+    
+    .markdown-editor-body code,
+    .markdown-editor-body kbd,
+    .markdown-editor-body pre,
+    .markdown-editor-body samp {
+      font-family: monospace,monospace;
+      font-size: 1em;
+    }
+    
+    .markdown-editor-body figure {
+      margin: 1em 40px;
+    }
+    
+    .markdown-editor-body hr {
+      box-sizing: content-box;
+      overflow: hidden;
+      background: transparent;
+      border-bottom: 1px solid hsla(210,18%,87%,1);
+      height: .25em;
+      padding: 0;
+      margin: 24px 0;
+      background-color: #d0d7de;
+      border: 0;
+    }
+    
+    .markdown-editor-body html [type=button],
+    .markdown-editor-body [type=reset],
+    .markdown-editor-body [type=submit] {
+      -webkit-appearance: button;
+    }
+    
+    .markdown-editor-body [type=button]::-moz-focus-inner,
+    .markdown-editor-body [type=reset]::-moz-focus-inner,
+    .markdown-editor-body [type=submit]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+    
+    .markdown-editor-body [type=button]:-moz-focusring,
+    .markdown-editor-body [type=reset]:-moz-focusring,
+    .markdown-editor-body [type=submit]:-moz-focusring {
+      outline: 1px dotted ButtonText;
+    }
+    
+    .markdown-editor-body [type=checkbox],
+    .markdown-editor-body [type=radio] {
+      box-sizing: border-box;
+      padding: 0;
+    }
+    
+    .markdown-editor-body [type=number]::-webkit-inner-spin-button,
+    .markdown-editor-body [type=number]::-webkit-outer-spin-button {
+      height: auto;
+    }
+    
+    .markdown-editor-body [type=search] {
+      -webkit-appearance: textfield;
+      outline-offset: -2px;
+    }
+    
+    .markdown-editor-body [type=search]::-webkit-search-cancel-button,
+    .markdown-editor-body [type=search]::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+    
+    .markdown-editor-body ::-webkit-input-placeholder {
+      color: inherit;
+      opacity: .54;
+    }
+    
+    .markdown-editor-body ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit;
+    }
+    
+    .markdown-editor-body a:hover {
+      text-decoration: underline;
+    }
+    
+    .markdown-editor-body hr::before {
+      display: table;
+      content: "";
+    }
+    
+    .markdown-editor-body hr::after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+    
+    .markdown-editor-body table {
+      border-spacing: 0;
+      border-collapse: collapse;
+      display: block;
+      width: max-content;
+      max-width: 100%;
+      overflow: auto;
+    }
+    
+    .markdown-editor-body td,
+    .markdown-editor-body th {
+      padding: 0;
+    }
+    
+    .markdown-editor-body details summary {
+      cursor: pointer;
+    }
+    
+    .markdown-editor-body details:not([open])>*:not(summary) {
+      display: none !important;
+    }
+    
+    .markdown-editor-body kbd {
+      display: inline-block;
+      padding: 3px 5px;
+      font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+      line-height: 10px;
+      color: #24292f;
+      vertical-align: middle;
+      background-color: #f6f8fa;
+      border: solid 1px rgba(175,184,193,0.2);
+      border-bottom-color: rgba(175,184,193,0.2);
+      border-radius: 6px;
+      box-shadow: inset 0 -1px 0 rgba(175,184,193,0.2);
+    }
+    
+    .markdown-editor-body h1,
+    .markdown-editor-body h2,
+    .markdown-editor-body h3,
+    .markdown-editor-body h4,
+    .markdown-editor-body h5,
+    .markdown-editor-body h6 {
+      margin-top: 24px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    
+    .markdown-editor-body h2 {
+      font-weight: 600;
+      padding-bottom: .3em;
+      font-size: 1.5em;
+      border-bottom: 1px solid hsla(210,18%,87%,1);
+    }
+    
+    .markdown-editor-body h3 {
+      font-weight: 600;
+      font-size: 1.25em;
+    }
+    
+    .markdown-editor-body h4 {
+      font-weight: 600;
+      font-size: 1em;
+    }
+    
+    .markdown-editor-body h5 {
+      font-weight: 600;
+      font-size: .875em;
+    }
+    
+    .markdown-editor-body h6 {
+      font-weight: 600;
+      font-size: .85em;
+      color: #57606a;
+    }
+    
+    .markdown-editor-body p {
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-indent: 2em;
+    }
+    
+    .markdown-editor-body blockquote {
+      margin: 0;
+      padding: 0 1em;
+      color: #57606a;
+      border-left: .25em solid #d0d7de;
+    }
+    
+    .markdown-editor-body ul,
+    .markdown-editor-body ol {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 2em;
+    }
+    
+    .markdown-editor-body ol ol,
+    .markdown-editor-body ul ol {
+      list-style-type: lower-roman;
+    }
+    
+    .markdown-editor-body ul ul ol,
+    .markdown-editor-body ul ol ol,
+    .markdown-editor-body ol ul ol,
+    .markdown-editor-body ol ol ol {
+      list-style-type: lower-alpha;
+    }
+    
+    .markdown-editor-body dd {
+      margin-left: 0;
+    }
+    
+    .markdown-editor-body tt,
+    .markdown-editor-body code {
+      font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+      font-size: 12px;
+    }
+    
+    .markdown-editor-body pre {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+      font-size: 12px;
+      word-wrap: normal;
+    }
+    
+    .markdown-editor-body :-ms-input-placeholder {
+      color: #6e7781;
+      opacity: 1;
+    }
+    
+    .markdown-editor-body ::-ms-input-placeholder {
+      color: #6e7781;
+      opacity: 1;
+    }
+    
+    .markdown-editor-body ::placeholder {
+      color: #6e7781;
+      opacity: 1;
+    }
+    
+    .markdown-editor-body .pl-c {
+      color: #6e7781;
+    }
+    
+    .markdown-editor-body .pl-c1,
+    .markdown-editor-body .pl-s .pl-v {
+      color: #0550ae;
+    }
+    
+    .markdown-editor-body .pl-e,
+    .markdown-editor-body .pl-en {
+      color: #8250df;
+    }
+    
+    .markdown-editor-body .pl-smi,
+    .markdown-editor-body .pl-s .pl-s1 {
+      color: #24292f;
+    }
+    
+    .markdown-editor-body .pl-ent {
+      color: #116329;
+    }
+    
+    .markdown-editor-body .pl-k {
+      color: #cf222e;
+    }
+    
+    .markdown-editor-body .pl-s,
+    .markdown-editor-body .pl-pds,
+    .markdown-editor-body .pl-s .pl-pse .pl-s1,
+    .markdown-editor-body .pl-sr,
+    .markdown-editor-body .pl-sr .pl-cce,
+    .markdown-editor-body .pl-sr .pl-sre,
+    .markdown-editor-body .pl-sr .pl-sra {
+      color: #0a3069;
+    }
+    
+    .markdown-editor-body .pl-v,
+    .markdown-editor-body .pl-smw {
+      color: #953800;
+    }
+    
+    .markdown-editor-body .pl-bu {
+      color: #82071e;
+    }
+    
+    .markdown-editor-body .pl-ii {
+      color: #f6f8fa;
+      background-color: #82071e;
+    }
+    
+    .markdown-editor-body .pl-c2 {
+      color: #f6f8fa;
+      background-color: #cf222e;
+    }
+    
+    .markdown-editor-body .pl-sr .pl-cce {
+      font-weight: bold;
+      color: #116329;
+    }
+    
+    .markdown-editor-body .pl-ml {
+      color: #3b2300;
+    }
+    
+    .markdown-editor-body .pl-mh,
+    .markdown-editor-body .pl-mh .pl-en,
+    .markdown-editor-body .pl-ms {
+      font-weight: bold;
+      color: #0550ae;
+    }
+    
+    .markdown-editor-body .pl-mi {
+      font-style: italic;
+      color: #24292f;
+    }
+    
+    .markdown-editor-body .pl-mb {
+      font-weight: bold;
+      color: #24292f;
+    }
+    
+    .markdown-editor-body .pl-md {
+      color: #82071e;
+      background-color: #FFEBE9;
+    }
+    
+    .markdown-editor-body .pl-mi1 {
+      color: #116329;
+      background-color: #dafbe1;
+    }
+    
+    .markdown-editor-body .pl-mc {
+      color: #953800;
+      background-color: #ffd8b5;
+    }
+    
+    .markdown-editor-body .pl-mi2 {
+      color: #eaeef2;
+      background-color: #0550ae;
+    }
+    
+    .markdown-editor-body .pl-mdr {
+      font-weight: bold;
+      color: #8250df;
+    }
+    
+    .markdown-editor-body .pl-ba {
+      color: #57606a;
+    }
+    
+    .markdown-editor-body .pl-sg {
+      color: #8c959f;
+    }
+    
+    .markdown-editor-body .pl-corl {
+      text-decoration: underline;
+      color: #0a3069;
+    }
+    
+    .markdown-editor-body [data-catalyst] {
+      display: block;
+    }
+    
+    .markdown-editor-body g-emoji {
+      font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+      font-size: 1em;
+      font-style: normal !important;
+      font-weight: 400;
+      line-height: 1;
+      vertical-align: -0.075em;
+    }
+    
+    .markdown-editor-body g-emoji img {
+      width: 1em;
+      height: 1em;
+    }
+    
+    .markdown-editor-body::before {
+      display: table;
+      content: "";
+    }
+    
+    .markdown-editor-body::after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+    
+    .markdown-editor-body>*:first-child {
+      margin-top: 0 !important;
+    }
+    
+    .markdown-editor-body>*:last-child {
+      margin-bottom: 0 !important;
+    }
+    
+    .markdown-editor-body a:not([href]) {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .markdown-editor-body .absent {
+      color: #cf222e;
+    }
+    
+    .markdown-editor-body .anchor {
+      float: left;
+      padding-right: 4px;
+      margin-left: -20px;
+      line-height: 1;
+    }
+    
+    .markdown-editor-body .anchor:focus {
+      outline: none;
+    }
+    
+    .markdown-editor-body p,
+    .markdown-editor-body blockquote,
+    .markdown-editor-body ul,
+    .markdown-editor-body ol,
+    .markdown-editor-body dl,
+    .markdown-editor-body table,
+    .markdown-editor-body pre,
+    .markdown-editor-body details {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    
+    .markdown-editor-body blockquote>:first-child {
+      margin-top: 0;
+    }
+    
+    .markdown-editor-body blockquote>:last-child {
+      margin-bottom: 0;
+    }
+    
+    .markdown-editor-body sup>a::before {
+      content: "[";
+    }
+    
+    .markdown-editor-body sup>a::after {
+      content: "]";
+    }
+    
+    .markdown-editor-body h1 .octicon-link,
+    .markdown-editor-body h2 .octicon-link,
+    .markdown-editor-body h3 .octicon-link,
+    .markdown-editor-body h4 .octicon-link,
+    .markdown-editor-body h5 .octicon-link,
+    .markdown-editor-body h6 .octicon-link {
+      color: #24292f;
+      vertical-align: middle;
+      visibility: hidden;
+    }
+    
+    .markdown-editor-body h1:hover .anchor,
+    .markdown-editor-body h2:hover .anchor,
+    .markdown-editor-body h3:hover .anchor,
+    .markdown-editor-body h4:hover .anchor,
+    .markdown-editor-body h5:hover .anchor,
+    .markdown-editor-body h6:hover .anchor {
+      text-decoration: none;
+    }
+    
+    .markdown-editor-body h1:hover .anchor .octicon-link,
+    .markdown-editor-body h2:hover .anchor .octicon-link,
+    .markdown-editor-body h3:hover .anchor .octicon-link,
+    .markdown-editor-body h4:hover .anchor .octicon-link,
+    .markdown-editor-body h5:hover .anchor .octicon-link,
+    .markdown-editor-body h6:hover .anchor .octicon-link {
+      visibility: visible;
+    }
+    
+    .markdown-editor-body h1 tt,
+    .markdown-editor-body h1 code,
+    .markdown-editor-body h2 tt,
+    .markdown-editor-body h2 code,
+    .markdown-editor-body h3 tt,
+    .markdown-editor-body h3 code,
+    .markdown-editor-body h4 tt,
+    .markdown-editor-body h4 code,
+    .markdown-editor-body h5 tt,
+    .markdown-editor-body h5 code,
+    .markdown-editor-body h6 tt,
+    .markdown-editor-body h6 code {
+      padding: 0 .2em;
+      font-size: inherit;
+    }
+    
+    .markdown-editor-body ul.no-list,
+    .markdown-editor-body ol.no-list {
+      padding: 0;
+      list-style-type: none;
+    }
+    
+    .markdown-editor-body ol[type="1"] {
+      list-style-type: decimal;
+    }
+    
+    .markdown-editor-body ol[type=a] {
+      list-style-type: lower-alpha;
+    }
+    
+    .markdown-editor-body ol[type=i] {
+      list-style-type: lower-roman;
+    }
+    
+    .markdown-editor-body div>ol:not([type]) {
+      list-style-type: decimal;
+    }
+    
+    .markdown-editor-body ul ul,
+    .markdown-editor-body ul ol,
+    .markdown-editor-body ol ol,
+    .markdown-editor-body ol ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .markdown-editor-body li>p {
+      margin-top: 16px;
+    }
+    
+    .markdown-editor-body li+li {
+      margin-top: .25em;
+    }
+    
+    .markdown-editor-body dl {
+      padding: 0;
+    }
+    
+    .markdown-editor-body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 600;
+    }
+    
+    .markdown-editor-body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+    
+    .markdown-editor-body table th {
+      font-weight: 600;
+    }
+    
+    .markdown-editor-body table th,
+    .markdown-editor-body table td {
+      padding: 6px 13px;
+      border: 1px solid #d0d7de;
+    }
+    
+    .markdown-editor-body table tr {
+      background-color: #ffffff;
+      border-top: 1px solid hsla(210,18%,87%,1);
+    }
+    
+    .markdown-editor-body table tr:nth-child(2n) {
+      background-color: #f6f8fa;
+    }
+    
+    .markdown-editor-body table img {
+      background-color: transparent;
+    }
+    
+    .markdown-editor-body img[align=right] {
+      padding-left: 20px;
+    }
+    
+    .markdown-editor-body img[align=left] {
+      padding-right: 20px;
+    }
+    
+    .markdown-editor-body .emoji {
+      max-width: none;
+      vertical-align: text-top;
+      background-color: transparent;
+    }
+    
+    .markdown-editor-body span.frame {
+      display: block;
+      overflow: hidden;
+    }
+    
+    .markdown-editor-body span.frame>span {
+      display: block;
+      float: left;
+      width: auto;
+      padding: 7px;
+      margin: 13px 0 0;
+      overflow: hidden;
+      border: 1px solid #d0d7de;
+    }
+    
+    .markdown-editor-body span.frame span img {
+      display: block;
+      float: left;
+    }
+    
+    .markdown-editor-body span.frame span span {
+      display: block;
+      padding: 5px 0 0;
+      clear: both;
+      color: #24292f;
+    }
+    
+    .markdown-editor-body span.align-center {
+      display: block;
+      overflow: hidden;
+      clear: both;
+    }
+    
+    .markdown-editor-body span.align-center>span {
+      display: block;
+      margin: 13px auto 0;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .markdown-editor-body span.align-center span img {
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .markdown-editor-body span.align-right {
+      display: block;
+      overflow: hidden;
+      clear: both;
+    }
+    
+    .markdown-editor-body span.align-right>span {
+      display: block;
+      margin: 13px 0 0;
+      overflow: hidden;
+      text-align: right;
+    }
+    
+    .markdown-editor-body span.align-right span img {
+      margin: 0;
+      text-align: right;
+    }
+    
+    .markdown-editor-body span.float-left {
+      display: block;
+      float: left;
+      margin-right: 13px;
+      overflow: hidden;
+    }
+    
+    .markdown-editor-body span.float-left span {
+      margin: 13px 0 0;
+    }
+    
+    .markdown-editor-body span.float-right {
+      display: block;
+      float: right;
+      margin-left: 13px;
+      overflow: hidden;
+    }
+    
+    .markdown-editor-body span.float-right>span {
+      display: block;
+      margin: 13px auto 0;
+      overflow: hidden;
+      text-align: right;
+    }
+    
+    .markdown-editor-body code,
+    .markdown-editor-body tt {
+      padding: .2em .4em;
+      margin: 0;
+      font-size: 85%;
+      background-color: rgba(175,184,193,0.2);
+      border-radius: 6px;
+    }
+    
+    .markdown-editor-body code br,
+    .markdown-editor-body tt br {
+      display: none;
+    }
+    
+    .markdown-editor-body del code {
+      text-decoration: inherit;
+    }
+    
+    .markdown-editor-body pre code {
+      font-size: 100%;
+    }
+    
+    .markdown-editor-body pre>code {
+      padding: 0;
+      margin: 0;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+    
+    .markdown-editor-body .highlight {
+      margin-bottom: 16px;
+    }
+    
+    .markdown-editor-body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+    
+    .markdown-editor-body .highlight pre,
+    .markdown-editor-body pre {
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      background-color: #f6f8fa;
+      border-radius: 6px;
+    }
+    
+    .markdown-editor-body pre code,
+    .markdown-editor-body pre tt {
+      display: inline;
+      max-width: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0;
+    }
+    
+    .markdown-editor-body .csv-data td,
+    .markdown-editor-body .csv-data th {
+      padding: 5px;
+      overflow: hidden;
+      font-size: 12px;
+      line-height: 1;
+      text-align: left;
+      white-space: nowrap;
+    }
+    
+    .markdown-editor-body .csv-data .blob-num {
+      padding: 10px 8px 9px;
+      text-align: right;
+      background: #ffffff;
+      border: 0;
+    }
+    
+    .markdown-editor-body .csv-data tr {
+      border-top: 0;
+    }
+    
+    .markdown-editor-body .csv-data th {
+      font-weight: 600;
+      background: #f6f8fa;
+      border-top: 0;
+    }
+    
+    .markdown-editor-body .footnotes {
+      font-size: 12px;
+      color: #57606a;
+      border-top: 1px solid #d0d7de;
+    }
+    
+    .markdown-editor-body .footnotes ol {
+      padding-left: 16px;
+    }
+    
+    .markdown-editor-body .footnotes li {
+      position: relative;
+    }
+    
+    .markdown-editor-body .footnotes li:target::before {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      bottom: -8px;
+      left: -24px;
+      pointer-events: none;
+      content: "";
+      border: 2px solid #0969da;
+      border-radius: 6px;
+    }
+    
+    .markdown-editor-body .footnotes li:target {
+      color: #24292f;
+    }
+    
+    .markdown-editor-body .footnotes .data-footnote-backref g-emoji {
+      font-family: monospace;
+    }
+    
+    .markdown-editor-body [hidden] {
+      display: none !important;
+    }
+    
+    .markdown-editor-body ::-webkit-calendar-picker-indicator {
+      filter: invert(50%);
+    }
+    
+  }
+}
